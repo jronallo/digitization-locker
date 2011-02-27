@@ -1,0 +1,16 @@
+== Digitization Locker
+
+Digitization Locker is a demonstration project for streamlining digitization
+workflows. The basic idea is that there is a space where TIFs can be dropped
+from scanning workstations. This directory is called the locker. When a file
+has been stable in the locker for a number of checks, then it is moved into
+the holding area. Every so often (possibly overnight) the files in the
+holding area are processed.
+
+Processing of files will involve (since nothing is implemented yet):
+1. Moving the master into archival storage. In this case a Pairtree will be
+   used.
+2. A stub metadata record is created.
+3. If the files are mead identifiers and the EAD XML is accessible, then
+   stub descriptive metadata (a title) is added.
+4. Creation of access derivatives. In this case a medium sized JPEG.

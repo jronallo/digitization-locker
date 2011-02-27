@@ -1,0 +1,16 @@
+development:
+  domain: localhost:3000
+  locker: tmp/development_locker
+  tank: tmp/development_tank
+  stable_interval: 2
+  watcher_persist: tmp/development_watcher.yml
+
+test:
+  domain: test.host
+  locker: tmp/test_locker
+  tank: tmp/test_tank
+  stable_interval: 2
+  watcher_persist: tmp/test_watcher.yml
+
+production:
+  domain: example.com
