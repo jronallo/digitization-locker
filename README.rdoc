@@ -18,7 +18,7 @@ Processing of files currently involves:
 2. Creating a stub metadata record.
 3. If the files are {mead}[https://github.com/jronallo/mead] identifiers 
    and the EAD XML is accessible, then stub descriptive metadata in the form
-   of a a title is added.
+   of a title is added.
 4. Creation of a JPG access derivative which is placed in a separate
    pairtree from access copies.
   
