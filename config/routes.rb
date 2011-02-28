@@ -1,5 +1,9 @@
 DigitizationLocker::Application.routes.draw do
-  resources :resources
+  resources :resources do
+    collection do
+      get 'search'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -14,6 +18,7 @@ DigitizationLocker::Application.routes.draw do
 
   match 'locker' => 'locker#index'
   match 'tank' => 'tank#index'
+  
   
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -54,7 +59,7 @@ DigitizationLocker::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
-
+  root :to => "locker#index"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

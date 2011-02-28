@@ -1,6 +1,11 @@
 class Resource < ActiveRecord::Base
   attr_accessible :filename, :title
   
+  searchable do
+    text :title
+    text :filename
+  end
+  
   def access_image
     # FIXME:
     File.join(APP_CONFIG[:access_pairtree].sub('public',''),

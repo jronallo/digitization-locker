@@ -23,6 +23,22 @@ Processing of files currently involves:
    pairtree from access copies.
   
 
+== Try it out in development
+
+- rake sunspot:solr:start
+- rails server
+- place a TIF in tmp/development_locker. For two sample images see spec/images
+- visit http://localhost:3000/locker
+- rake locker:watch # => this will update the stable counter once
+- rake locker:watch # => and again until it is no longer in the locker
+- reload http://localhost:3000/locker
+- visit http://localhost:3000/tank
+- rake locker:process
+- reload http://localhost:3000/tank
+- visit http://localhost:3000/resources
+- 
+  
+  
 == Configuration
   
 Many of the options are configurable. See config/app_config.yml.
@@ -32,6 +48,7 @@ Many of the options are configurable. See config/app_config.yml.
   
 1. Make default values for all configuration options.
 2. Add checksumming and insure all file moves are checksummed.
+3. Cache EAD XML for subsequent requests for automated metadata extraction.
   
 == Author
 

@@ -2,6 +2,11 @@ Given /^a locker$/ do
   File.exists?(APP_CONFIG[:locker]).should be_true
 end
 
+Given /^I have "([^"]*)" in the repository$/ do |arg1|
+  Given %Q!a holding tank with "#{arg1}"!
+  And "the holding tank processing script runs"
+end
+
 When /^I move the file "([^"]*)" to the locker$/ do |arg1|
   expect {
     FileUtils.cp(Rails.root.join('spec/images', arg1),

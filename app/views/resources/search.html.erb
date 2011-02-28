@@ -1,0 +1,12 @@
+<% title 'Search Results' %>
+
+<div id="results">
+  <% @search.each_hit_with_result do |hit, resource| %>
+    <div class="result">
+      <h2><%= resource.title %></h2>
+      <p><%= resource.filename %></p>
+      <%= image_tag resource.access_image %>
+    </div>
+    <hr/>
+  <% end -%>
+</div>

@@ -1,0 +1,7 @@
+<%= semantic_form_for(:resource, :url => {:action => "search", :controller => 'resources'}, :html => {:method => :get, :id => 'search'} ) do |f| -%>
+  <p>
+    <%= f.input :q, :input_html => { :name => 'q', :value => params[:q] }, :label => "Search" %>
+    <%#= render :partial => 'hidden_fields' %>
+    <%= f.buttons :label => 'Submit' %>
+  </p>
+<% end -%>

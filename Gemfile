@@ -12,6 +12,8 @@ gem 'whenever', :require => false
 gem 'orchard'
 gem 'mini_magick'
 gem 'mead'
+gem 'sunspot_rails', '1.2.1'
+gem 'formtastic', '1.2.3'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -24,7 +24,6 @@ Feature: locker
     When I am on the resources page
     Then I should see "<original filename>"
     And I should see an image "<converted filename>"
-    And show me the page
     And I should see "<title>"
     
     Scenarios:

@@ -6,6 +6,12 @@ class ResourcesController < ApplicationController
   def show
     @resource = Resource.find(params[:id])
   end
+  
+  def search
+    @search = Resource.search do
+      keywords(params[:q])
+    end
+  end
 
   def new
     @resource = Resource.new

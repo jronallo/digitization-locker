@@ -9,6 +9,13 @@
   <%= @resource.title %>
 </p>
 
+
+
+<p>
+  <strong>Access Image:</strong>
+  <%= image_tag @resource.access_image %>
+</p>
+
 <p>
   <%= link_to "Edit", edit_resource_path(@resource) %> |
   <%= link_to "Destroy", @resource, :confirm => 'Are you sure?', :method => :delete %> |

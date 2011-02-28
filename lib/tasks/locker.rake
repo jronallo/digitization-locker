@@ -36,6 +36,7 @@ namespace :locker do
       # extract title
       r.title = r.extract_title!
       r.save
+      Sunspot.commit
     end
   end
   
