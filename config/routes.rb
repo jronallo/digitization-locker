@@ -10,6 +10,9 @@ DigitizationLocker::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
+  match 'locker' => 'locker#index'
+  match 'tank' => 'tank#index'
+  
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

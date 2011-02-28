@@ -19,5 +19,21 @@ namespace :locker do
     dw.persist!
   end
   
+  desc 'process the holding tank files'
+  task :process => :environment do
+    Dir.glob(File.join(APP_CONFIG[:tank], '*')).each do |file_path|
+      lf = Locker::Filepath.new(file_path)
+      lf.cp_to_ptree(APP_CONFIG[:repository_pairtree])
+      
+      lf.create_access_copy
+      # convert into access copies
+      if File.exists?(lf.filename_to_ppath(APP_CONFIG[:repository_pairtree]))
+        FileUtils.rm(file_path)
+      else
+        # do something with this kind of error
+      end
+    end
+  end
+  
   
 end

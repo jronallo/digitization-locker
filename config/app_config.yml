@@ -4,13 +4,21 @@ development:
   tank: tmp/development_tank
   stable_interval: 2
   watcher_persist: tmp/development_watcher.yml
-
+  repository_pairtree: tmp/development_repository_pairtree
+  access_pairtree: tmp/development_access_pairtree
+  access_image_size: 300x300
+  access_image_format: jpg
+  
 test:
   domain: test.host
   locker: tmp/test_locker
   tank: tmp/test_tank
   stable_interval: 2
   watcher_persist: tmp/test_watcher.yml
+  repository_pairtree: tmp/test_repository_pairtree
+  access_pairtree: tmp/test_access_pairtree
+  access_image_size: 300x300
+  access_image_format: jpg
 
 production:
   domain: example.com

@@ -65,7 +65,11 @@ require File.expand_path(File.join(File.dirname(__FILE__), 'blueprint_setup' ))
 Before {BlueprintSetup.setup}
 After {
   [:locker, :tank].each do |key|
-    Dir.glob(File.join(APP_CONFIG[key], '*')).each {|f| FileUtils.rm(f)}
+    Dir.glob(File.join(APP_CONFIG[key], '*')).each {|f| FileUtils.rm_rf(f) if File.exists?(f)}
   end
-  FileUtils.rm(APP_CONFIG[:watcher_persist])
+  [:repository_pairtree, :access_pairtree].each do |key|
+    Dir.glob(File.join(APP_CONFIG[key], '*')).each {|dir| FileUtils.rm_rf(dir) }
+  end
+  FileUtils.rm_rf(APP_CONFIG[:watcher_persist])
+
 }

@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'directory_watcher'
 gem 'whenever', :require => false
+gem 'orchard'
+gem 'mini_magick'
 
 # Use unicorn as the web server
 # gem 'unicorn'
