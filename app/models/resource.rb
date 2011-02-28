@@ -2,7 +2,6 @@ class Resource < ActiveRecord::Base
   attr_accessible :filename, :title
   
   def access_image
-    basename = Locker::Filepath.new(filename).basename
     # FIXME:
     File.join(APP_CONFIG[:access_pairtree].sub('public',''),
       Orchard::Pairtree.id_to_ppath(basename),
@@ -10,13 +9,21 @@ class Resource < ActiveRecord::Base
   end
   
   def extract_title!
-    mead = new_mead
-    if mead.valid?
-      mead.extract
-      @title = mead.metadata.map do |c|
-        c.unittitle + ', ' + c.unitdate
-      end.join(' :: ')
+    begin
+      mead = new_mead
+      if mead.valid?
+        mead.extract
+        @title = mead.metadata.map do |c|
+          c.unittitle + ', ' + c.unitdate
+        end.join(' :: ')
+      end
+    rescue
+      basename.split('_').join(' ').split('-').join(' ')
     end
+  end
+  
+  def basename
+    Locker::Filepath.new(filename).basename
   end
   
   def new_mead
