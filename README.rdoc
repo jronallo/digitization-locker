@@ -21,13 +21,14 @@ Processing of files currently involves:
    of a title is added.
 4. Creation of a JPG access derivative which is placed in a separate
    pairtree from access copies.
+5. Indexing the title and filename to Solr.
   
 
 == Try it out in development
 
 - rake sunspot:solr:start
 - rails server
-- place a TIF in tmp/development_locker. For two sample images see spec/images
+- place TIF and JPEGs in tmp/development_locker. For this example use the two sample images see spec/images
 - visit http://localhost:3000/locker
 - rake locker:watch # => this will update the stable counter once
 - rake locker:watch # => and again until it is no longer in the locker
@@ -36,7 +37,7 @@ Processing of files currently involves:
 - rake locker:process
 - reload http://localhost:3000/tank
 - visit http://localhost:3000/resources
-- 
+- search for "Amos"
   
   
 == Configuration
