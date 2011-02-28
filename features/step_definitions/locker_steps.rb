@@ -54,3 +54,8 @@ end
 Then /^I should not see "([^"]*)" in the holding tank$/ do |arg1|
   File.exists?( File.join(APP_CONFIG[:tank], arg1   )).should be_false
 end
+
+Then /^I should see an image "([^"]*)"$/ do |arg1|
+  # FIXME: how to make this more specific?
+  page.should have_css('img')
+end

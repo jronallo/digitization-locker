@@ -1,0 +1,21 @@
+<% title "Resources" %>
+
+<table>
+  <tr>
+    <th>Filename</th>
+    <th>Title</th>
+    <th>Image</th>
+  </tr>
+  <% for resource in @resources %>
+    <tr>
+      <td><%= resource.filename %></td>
+      <td><%= resource.title %></td>
+      <td><%= image_tag resource.access_image %></td>
+      <td><%= link_to "Show", resource %></td>
+      <td><%= link_to "Edit", edit_resource_path(resource) %></td>
+      <td><%= link_to "Destroy", resource, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Resource", new_resource_path %></p>

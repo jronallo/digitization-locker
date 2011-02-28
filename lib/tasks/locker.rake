@@ -24,7 +24,8 @@ namespace :locker do
     Dir.glob(File.join(APP_CONFIG[:tank], '*')).each do |file_path|
       lf = Locker::Filepath.new(file_path)
       lf.cp_to_ptree(APP_CONFIG[:repository_pairtree])
-      
+      r = Resource.new
+      r.filename = File.basename(file_path)
       lf.create_access_copy
       # convert into access copies
       if File.exists?(lf.filename_to_ppath(APP_CONFIG[:repository_pairtree]))
@@ -32,6 +33,9 @@ namespace :locker do
       else
         # do something with this kind of error
       end
+      # extract title
+      r.title = r.extract_title!
+      r.save
     end
   end
   

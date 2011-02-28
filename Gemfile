@@ -11,6 +11,7 @@ gem 'directory_watcher'
 gem 'whenever', :require => false
 gem 'orchard'
 gem 'mini_magick'
+gem 'mead'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -40,6 +41,8 @@ group :development, :test do
   gem 'autotest'
   gem 'autotest-notification'
   gem 'database_cleaner'
+  gem 'launchy'
 end
 gem "nifty-generators", :group => :development
+
 

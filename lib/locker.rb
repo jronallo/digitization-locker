@@ -19,7 +19,7 @@ module Locker
     end
     
     def access_image_path
-      File.join(access_path, basename + '.jpg')
+      File.join(access_path, basename + ".#{APP_CONFIG[:access_image_format]}")
     end
     
     

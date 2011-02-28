@@ -12,7 +12,7 @@ Feature: administer the locker space
     
     Scenarios:
     | filename                            |
-    | mc00383-001-ff0002-001-003_001.tif  |
+    | mc00240-001-ff0071-001-001_0001.tif  |
     | mc00336_Roundabout-July-2010-80.jpg |
     
   Scenario Outline:
@@ -23,5 +23,5 @@ Feature: administer the locker space
     
     Scenarios:
     | filename                            |
-    | mc00383-001-ff0002-001-003_001.tif  |
+    | mc00240-001-ff0071-001-001_0001.tif  |
     | mc00336_Roundabout-July-2010-80.jpg |

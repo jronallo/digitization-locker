@@ -1,0 +1,12 @@
+<%= form_for @resource do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :filename %><br />
+    <%= f.text_field :filename %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

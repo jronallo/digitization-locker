@@ -12,19 +12,24 @@ Feature: locker
     
     Scenarios:
     | filename                            |
-    | mc00383-001-ff0002-001-003_001.tif  |
+    | mc00240-001-ff0071-001-001_0001.tif  |
     | mc00336_Roundabout-July-2010-80.jpg |
     
-  Scenario Outline: processing the tank files to pairtrees and
+  Scenario Outline: processing the tank files to pairtrees
     Given a holding tank with "<original filename>"
     When the holding tank processing script runs
     Then I should see "<original filename>" in the repository pairtree
     And I should see "<converted filename>" in the access pairtree
     And I should not see "<original filename>" in the holding tank
+    When I am on the resources page
+    Then I should see "<original filename>"
+    And I should see an image "<converted filename>"
+    And show me the page
+    And I should see "<title>"
     
     Scenarios:
-    | original filename                   | converted filename                  |
-    | mc00383-001-ff0002-001-003_001.tif  | mc00383-001-ff0002-001-003_001.jpg  |
-    | mc00336_Roundabout-July-2010-80.jpg | mc00336_Roundabout-July-2010-80.jpg |
+    | original filename                   | converted filename                   | title |
+    | mc00240-001-ff0071-001-001_0001.tif  | mc00240-001-ff0071-001-001_0001.jpg | Amos Hosiery Mill - Factory Building, 1941 :: Drawings, 1917-1980 |
+    | mc00336_Roundabout-July-2010-80.jpg | mc00336_Roundabout-July-2010-80.jpg  | mc00336 Roundabout July 2010 80 |
 
   
